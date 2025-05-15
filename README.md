@@ -14,7 +14,7 @@ Install from CLI:
 
 ## Configure
 
-Set the FQDN.
+Set the FQDN and browse to it, the default login is admin/admin.
 
 If you don't use a valid certificate following configuration needs to be set, in this example it is set for instance opencloud1:
 
