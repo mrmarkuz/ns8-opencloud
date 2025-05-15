@@ -10,7 +10,7 @@ Install via Software center:
 
 Install from CLI:
 
-    add-module add-module ghcr.io/mrmarkuz/opencloud:1.0.1
+    add-module ghcr.io/mrmarkuz/opencloud:1.0.1
 
 ## Configure
 
