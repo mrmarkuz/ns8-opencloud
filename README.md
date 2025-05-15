@@ -20,6 +20,10 @@ If you don't use a valid certificate following configuration needs to be set, in
 
     runagent -m opencloud1 bash -c "grep -q OC_INSECURE environment || echo OC_INSECURE=true >> environment"
 
+Restart the service to apply the insecure configuration for using a self signed certificate:
+
+    runagent -m opencloud1 systemctl --user restart opencloud
+
 ## Uninstall
 
 To uninstall the instance:
