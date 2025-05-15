@@ -22,6 +22,7 @@ ExecStartPre=/bin/rm -f %t/opencloud.pid %t/opencloud.pod-id
 ExecStartPre=/usr/bin/podman pod create --infra-conmon-pidfile %t/opencloud.pid \
     --pod-id-file %t/opencloud.pod-id \
     --name opencloud \
+    --network=slirp4netns:allow_host_loopback=true \
     --publish 127.0.0.1:${TCP_PORT}:9200 \
     --replace
 ExecStart=/usr/bin/podman pod start --pod-id-file %t/opencloud.pod-id
