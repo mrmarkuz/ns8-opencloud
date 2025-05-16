@@ -18,7 +18,7 @@ TimeoutStopSec=70
 ExecStartPre=/bin/mkdir -p tmp
 ExecStartPre=/bin/rm -f %t/opencloud-app.pid %t/opencloud-app.ctr-id
 ExecStartPre=-runagent discover-smarthost
-ExecStartPre=-/usr/bin/podman run --rm -it -v opencloud-config:/etc/opencloud:Z -v opencloud-data:/var/lib/opencloud:Z -e IDM>
+ExecStartPre=-/usr/bin/podman run --rm -it -v opencloud-config:/etc/opencloud:Z -v opencloud-data:/var/lib/opencloud:Z -e IDM_ADMIN_PASSWORD=admin ${OPENCLOUD_ROLLING_IMAGE} init --insecure false
 ExecStart=/usr/bin/podman run --conmon-pidfile %t/opencloud-app.pid \
     --cidfile %t/opencloud-app.ctr-id --cgroups=no-conmon \
     --pod-id-file %t/opencloud.pod-id --replace -d --name  opencloud-app \
