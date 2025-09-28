@@ -15,16 +15,16 @@ EnvironmentFile=-%S/state/smarthost.env
 WorkingDirectory=%S/state
 Restart=always
 TimeoutStopSec=70
-ExecStartPre=/bin/mkdir -p tmp
 ExecStartPre=/bin/rm -f %t/opencloud-app.pid %t/opencloud-app.ctr-id
 ExecStartPre=-runagent discover-smarthost
-ExecStartPre=-/usr/bin/podman run --rm -it -v opencloud-config:/etc/opencloud:Z -v opencloud-data:/var/lib/opencloud:Z -e IDM_ADMIN_PASSWORD=admin ${OPENCLOUD_ROLLING_IMAGE} init --insecure false
+ExecStartPre=-/usr/bin/podman run --rm -it -v opencloud-config:/etc/opencloud:z -v opencloud-data:/var/lib/opencloud:z -e IDM_ADMIN_PASSWORD=admin ${OPENCLOUD_ROLLING_IMAGE} init --insecure false
 ExecStart=/usr/bin/podman run --conmon-pidfile %t/opencloud-app.pid \
     --cidfile %t/opencloud-app.ctr-id --cgroups=no-conmon \
     --pod-id-file %t/opencloud.pod-id --replace -d --name  opencloud-app \
     --env-file=%S/state/environment \
-    --volume opencloud-config:/etc/opencloud:Z \
-    --volume opencloud-data:/var/lib/opencloud:Z \
+    --volume opencloud-config:/etc/opencloud:z \
+    --volume opencloud-data:/var/lib/opencloud:z \
+    --volume opencloud-apps:/var/lib/opencloud/web/assets/apps:z \
     --env PROXY_HTTP_ADDR=0.0.0.0:9200 \
     --env OC_URL=https://${TRAEFIK_HOST} \
     --env PROXY_TLS=false \
