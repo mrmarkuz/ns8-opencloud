@@ -40,7 +40,7 @@ buildah config --entrypoint=/ \
     --label="org.nethserver.tcp-ports-demand=1" \
     --label="org.nethserver.rootfull=0" \
     --label="org.nethserver.min-core=3.12.4-0" \
-    --label="org.nethserver.images=docker.io/opencloudeu/opencloud-rolling:5.0.1" \
+    --label="org.nethserver.images=docker.io/opencloudeu/opencloud-rolling:5.1.0" \
     "${container}"
 # Commit the image
 buildah commit "${container}" "${repobase}/${reponame}"
