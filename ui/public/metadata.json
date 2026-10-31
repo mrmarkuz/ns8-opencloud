@@ -1,19 +1,23 @@
 {
-  "name": "opencloud",
+  "name": "OpenCloud",
   "description": {
-    "en": "My opencloud module"
+    "en": "OpenCloud is an open-source file management, file-sharing, and team collaboration platform",
+    "de": "OpenCloud ist eine Open-Source-Plattform für Dateiverwaltung, Dateifreigabe und Zusammenarbeit im Team",
+    "fr": "OpenCloud est une plateforme open source de gestion de fichiers, de partage de fichiers et de collaboration en équipe",
+    "it": "OpenCloud è una piattaforma open source per la gestione dei file, la condivisione di file e la collaborazione in team",
+    "es": "OpenCloud es una plataforma de código abierto para la gestión de archivos, el intercambio de archivos y la colaboración en equipo"
   },
-  "categories": [],
+  "categories": ["collaboration"],
   "authors": [
     {
-      "name": "Name Surname",
-      "email": "author@yourmail.org"
+      "name": "Markus Neuberger",
+      "email": "dev@markusneuberger.at"
     }
   ],
   "docs": {
-    "documentation_url": "https://docs.opencloud.com/",
-    "bug_url": "https://github.com/NethServer/dev",
-    "code_url": "https://github.com/author/ns8-opencloud"
+    "documentation_url": "https://docs.opencloud.eu/",
+    "bug_url": "https://community.nethserver.org",
+    "code_url": "https://github.com/mrmarkuz/ns8-opencloud"
   },
-  "source": "ghcr.io/nethserver/opencloud"
+  "source": "ghcr.io/mrmarkuz/opencloud"
 }
